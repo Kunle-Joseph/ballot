@@ -3,18 +3,12 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #50b074;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,5 +28,215 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.ballot {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.category {
+  margin-bottom: 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+.category-title h1 {
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.nominees {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.nominee-card {
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.nominee-card:hover {
+  background-color: #34ac9c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nominee-card-selected {
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  background-color: #34ac9c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nominee-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+.nominee-card img {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nominee-card-selected h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+.nominee-card-selected img {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.select-button {
+  background-color: #009b86;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.select-button:hover {
+  background-color: #34ac9c;
+}
+
+.submit {
+  background-color: #009b86;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-nominees {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.selected-nominee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin: 16px 0;
+  max-width: 300px;
+  gap: 20px;
+  text-align: center;
+  width: 200px;
+  padding: 15px;
+}
+
+.selected-nominee img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  background: #fff;
+}
+
+.selected-nominee h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.back-button {
+  background-color: #009b86;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #34ac9c;
+}
+
+/*smaller laptop screen*/
+@media (max-width: 800px) {
+  .App-header {
+    font-size: calc(8px);
+    padding: 10px;
+  }
+
+  .category-title h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .nominees {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nominee-card,
+  .nominee-card-selected,
+  .selected-nominee {
+    width: 140px;
+    padding: 8px;
+    font-size: 14px;
+    margin: 10px 0;
+    max-width: 90vw;
+  }
+
+  .nominee-card img,
+  .nominee-card-selected img,
+  .selected-nominee img {
+    width: 70px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 0;
+  }
+
+  .selected-nominees {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .selected-nominee h3 {
+    font-size: 1rem;
+  }
+
+  .select-button,
+  .submit,
+  .back-button {
+    padding: 6px 10px;
+    font-size: 13px;
+    margin: 6px;
   }
 }
