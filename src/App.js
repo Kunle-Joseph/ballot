@@ -2,7 +2,6 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import api from "./Api/Api";
 import Category from "./Components/Category";
-import SelectedNominees from "./Components/SelectedNominees";
 
 function App() {
   const [ballotData, setBallotData] = useState(null);
@@ -92,13 +91,21 @@ function App() {
   if (showSelected)
     return (
       <div className="selected">
-        <h1 >Your Selected Nominees</h1>
+        <h1>Your Selected Nominees</h1>
         <ul>
           <div className="selected-nominees">
             {ballotData.map((category) => (
               <div className="selected-nominee">
                 <h2>{category.title}</h2>
-                <SelectedNominees nominee={selectedNominee[category.title]} />
+                <div>
+                  <div>
+                    <img
+                      src={selectedNominee[category.title].photoUrL}
+                      alt={selectedNominee[category.title].title}
+                    />
+                  </div>
+                  <h3>{selectedNominee[category.title].title}</h3>
+                </div>
               </div>
             ))}
           </div>
