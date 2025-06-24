@@ -75,7 +75,6 @@ function App() {
 
   const handleSubmit = () => {
     // making sure all categories have a nominee picked
-    console.log("Selected Nominees:", selectedNominee);
     for (const category in selectedNominee) {
       if (selectedNominee[category].title == null) {
         alert(`Please select a nominee for ${category}`);
